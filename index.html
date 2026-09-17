@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YCÔNE-Sens 2026</title>
+
+<style>
+
+/* =========================
+   VARIABLES
+   ========================= */
+
+:root {
+    --fond: #f4f4f4;
+    --fond-carte: #ffffff;
+    --texte: #222;
+    --bordure: #cccccc;
+    --bouton: #e8e8e8;
+    --bouton-hover: #d5d5d5;
+    --accent: #2563eb;
+    --accent-texte: #ffffff;
+    --ombre: 0 2px 6px rgba(0,0,0,0.10);
+}
+
+
+/* =========================
+   MODE SOMBRE
+   ========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --fond: #181818;
+        --fond-carte: #242424;
+        --texte: #eeeeee;
+        --bordure: #444444;
+        --bouton: #333333;
+        --bouton-hover: #444444;
+        --accent: #4d8dff;
+        --accent-texte: #ffffff;
+        --ombre: 0 2px 6px rgba(0,0,0,0.35);
+    }
+
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+}
+
+
+/* =========================
+   CONTENEUR
+   ========================= */
+
+.conteneur {
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =========================
+   TITRE
+   ========================= */
+
+h1 {
+    text-align: center;
+    margin: 10px 0 25px 0;
+    font-size: 28px;
+}
+
+
+/* =========================
+   CHOIX DE L'ANNÉE
+   ========================= */
+
+.annee {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+select {
+    font-size: 18px;
+    padding: 10px 35px 10px 15px;
+    border: 1px solid var(--bordure);
+    border-radius: 8px;
+    background: var(--fond-carte);
+    color: var(--texte);
+    cursor: pointer;
+}
+
+
+/* =========================
+   GRILLE DES MOIS
+   ========================= */
+
+.mois {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+
+/* =========================
+   BOUTONS
+   ========================= */
+
+.mois a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 65px;
+
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+
+    color: var(--texte);
+    background: var(--bouton);
+
+    border: 1px solid var(--bordure);
+    border-radius: 10px;
+
+    box-shadow: var(--ombre);
+
+    transition:
+        background 0.15s,
+        transform 0.15s;
+}
+
+
+/* Souris */
+
+.mois a:hover {
+    background: var(--bouton-hover);
+    transform: translateY(-2px);
+}
+
+
+/* Clic */
+
+.mois a:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOIS EN COURS
+   ========================= */
+
+.mois a.actuel {
+    background: var(--accent);
+    color: var(--accent-texte);
+    border-color: var(--accent);
+}
+
+
+/* =========================
+   MOIS INDISPONIBLE
+   ========================= */
+
+.mois a.inactif {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+
+/* =========================
+   TABLETTE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .mois {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================
+   TÉLÉPHONE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .mois {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .mois a {
+        min-height: 60px;
+        font-size: 15px;
+    }
+
+    select {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="conteneur">
+
+    <h1>HISTORIQUE</h1>
+
+
+    <!-- =====================
+         CHOIX DE L'ANNÉE
+         ===================== -->
+
+    <div class="annee">
+
+        <select id="annee" onchange="changerAnnee()">
+
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =====================
+         MOIS
+         ===================== -->
+
+    <div class="mois">
+
+        <a href="historique/2026/01.html">JANVIER</a>
+
+        <a href="historique/2026/02.html">FÉVRIER</a>
+
+        <a href="historique/2026/03.html">MARS</a>
+
+        <a href="historique/2026/04.html">AVRIL</a>
+
+        <a href="historique/2026/05.html">MAI</a>
+
+        <a href="historique/2026/06.html">JUIN</a>
+
+        <a href="historique/2026/07.html">JUILLET</a>
+
+        <a href="https://erikpier2.github.io/ycone_resultats/">AOÛT</a>
+
+        <a href="historique/2026/09.html">SEPTEMBRE</a>
+
+        <a href="historique/2026/10.html">OCTOBRE</a>
+
+        <a href="historique/2026/11.html">NOVEMBRE</a>
+
+        <a href="historique/2026/12.html">DÉCEMBRE</a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CHANGEMENT D'ANNÉE
+   ========================= */
+
+function changerAnnee() {
+
+    const annee = document.getElementById("annee").value;
+
+    const liens = document.querySelectorAll(".mois a");
+
+    liens.forEach(function(lien, index) {
+
+        let mois = String(index + 1).padStart(2, "0");
+
+        lien.href =
+            "historique/" + annee + "/" + mois + ".html";
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
+
